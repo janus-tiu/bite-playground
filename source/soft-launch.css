@@ -28,7 +28,7 @@
 #bite-playground .sl-banner p{margin:4px 0 0;color:white;font:400 16px/20.8px 'Figtree',Arial,sans-serif;white-space:nowrap}
 #bite-playground .sl-stack-graphics{position:absolute;left:240px;top:12px;width:92.492px;height:106px}
 #bite-playground .sl-orbit-graphics{position:absolute;inset:0;overflow:hidden;mask-image:url('__SOFT_LAUNCH_ANGLED_BACKGROUND__');mask-repeat:no-repeat;mask-size:393px 142px}
-#bite-playground .sl-orbit-motion{position:absolute;inset:0;transform:translateY(8px) scale(.8);transform-origin:351px 70px}
+#bite-playground .sl-orbit-motion{position:absolute;inset:0;transform:translate(-36px,8px) scale(.8);transform-origin:351px 70px}
 #bite-playground .sl-shape{position:absolute;display:block;will-change:transform;transform-origin:center;pointer-events:none}
 #bite-playground .sl-shape img{display:block;max-width:none}
 #bite-playground .sl-motion-note{margin:16px 0 0;color:var(--pg-muted);font:400 14px/22px 'Figtree',sans-serif}
