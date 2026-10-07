@@ -1520,6 +1520,21 @@ html,body{overflow:hidden!important}
 #bite-playground .gc-toolbar{flex-wrap:wrap}
 @media(max-width:640px){#bite-playground .pg-gradient-toolbar{justify-content:flex-start}}
 @media(forced-colors:active){#bite-playground .pg-gradient-track{background:Canvas;border-color:ButtonText}#bite-playground .pg-gradient-track:after{background:ButtonText}#bite-playground .pg-gradient-toggle input:checked+.pg-gradient-track{background:Highlight}}
+/* Date and weekday from Figma 27:1789 / 27:1895; reserve the row before hydration. */
+#bite-playground .bt-home-date{display:flex;align-items:center;gap:4px;min-height:21px;margin:0;color:#b2b4bc;font:400 16px/21px 'Figtree',Arial,sans-serif;white-space:nowrap}
+#bite-playground .bt-home-date-separator{color:#c2c4ca;font:600 12px/15.6px 'Figtree',Arial,sans-serif}
+/* Stacked banner: date at y=152, banner at y=189, games at y=336. */
+#bite-playground .bt-phone .bt-incoming{padding:16px 24px 28px}
+#bite-playground .bt-incoming>.bt-home-date{margin-bottom:16px}
+#bite-playground .bt-incoming>.sl-banner{margin-left:1px}
+#bite-playground .bt-phone .bt-incoming .bt-home-games{margin-top:17px}
+#bite-playground .sl-study[data-variant="stack"] .bt-home-date{margin:16px 24px 0}
+#bite-playground .sl-study[data-variant="stack"] .sl-banner{margin-top:16px}
+#bite-playground .sl-study[data-variant="stack"] .bt-home-games{margin:17px 0 28px 24px}
+/* Orbit banner: date follows the banner, at y=309; games begin at y=349. */
+#bite-playground .sl-study[data-variant="orbit"] .sl-banner{margin-top:11px}
+#bite-playground .sl-study[data-variant="orbit"] .bt-home-date{margin:20px 25px 0}
+#bite-playground .sl-study[data-variant="orbit"] .bt-home-games{margin:19px 0 28px 25px}
 </style></head>
 <body>
 <script type="application/json" id="codex-visualization-widget-state">{}</script>
@@ -1596,7 +1611,8 @@ html,body{overflow:hidden!important}
           </div>
         </section>
         <section class="bt-page bt-incoming" aria-label="Bite home" inert>
-          <section class="sl-banner sl-banner--stack" aria-label="Bite soft launch"><div class="sl-banner-copy"><h3>Small games.<br>Shared moments.</h3><p>Quick games,<br>refreshed daily at <time data-reset-time>3:00 AM ET</time>.</p></div><div class="sl-stack-graphics" aria-hidden="true"><span class="sl-shape" data-shape="stack-yellow" style="left:0px;top:7.44062945159385e-05px;width:70px;height:54px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNTQiIHZpZXdCb3g9IjAgMCA3MCA1NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjM1LjAwMjkiIGN5PSIyNi45ODA4IiByeD0iMzEuOTQ1MyIgcnk9IjE0LjM1ODQiIHRyYW5zZm9ybT0icm90YXRlKC0yNi4xODM1IDM1LjAwMjkgMjYuOTgwOCkiIGZpbGw9IiNGNUI2MTciLz4KPC9zdmc+Cg==" width="70" height="54" alt=""></span><span class="sl-shape" data-shape="stack-magenta" style="left:26px;top:67px;width:59px;height:39px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTkiIGhlaWdodD0iMzkiIHZpZXdCb3g9IjAgMCA1OSAzOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjUyMDggMTIuNzYzNkwwIDM5SDIzLjk2ODhMNTkgMjAuNTYzNkw0NS40NzkyIDBMMTMuNTIwOCAxMi43NjM2WiIgZmlsbD0iI0Q0MDBGRiIvPgo8L3N2Zz4K" width="59" height="39" alt=""></span><span class="sl-shape" data-shape="stack-orange" style="left:26px;top:18.000035375356674px;width:67px;height:67px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjciIGhlaWdodD0iNjciIHZpZXdCb3g9IjAgMCA2NyA2NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjc2MjQgMTEuMjUzOUw1Ny44MzQ0IDM0LjgxNzVMMjAuMTQwOSA1NC4zMDk4TDIxLjc2MjQgMTEuMjUzOVoiIGZpbGw9IiNGRjVFMDAiLz4KPC9zdmc+Cg==" width="67" height="67" alt=""></span><span class="sl-shape" data-shape="stack-green" style="left:7px;top:74px;width:39px;height:22px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzkiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAzOSAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNy4xNjA3TDM5IDkuMDU4ODJMMTIuODgzOSAyMkwwIDBaIiBmaWxsPSIjNTdENzAzIi8+Cjwvc3ZnPgo=" width="39" height="22" alt=""></span></div></section>
+          <time class="bt-home-date" data-bite-date><span data-bite-calendar-date>Today</span><span class="bt-home-date-separator" aria-hidden="true">•</span><span data-bite-weekday></span></time>
+<section class="sl-banner sl-banner--stack" aria-label="Bite soft launch"><div class="sl-banner-copy"><h3>Small games.<br>Shared moments.</h3><p>Quick games,<br>refreshed daily at <time data-reset-time>3:00 AM ET</time>.</p></div><div class="sl-stack-graphics" aria-hidden="true"><span class="sl-shape" data-shape="stack-yellow" style="left:0px;top:7.44062945159385e-05px;width:70px;height:54px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNTQiIHZpZXdCb3g9IjAgMCA3MCA1NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjM1LjAwMjkiIGN5PSIyNi45ODA4IiByeD0iMzEuOTQ1MyIgcnk9IjE0LjM1ODQiIHRyYW5zZm9ybT0icm90YXRlKC0yNi4xODM1IDM1LjAwMjkgMjYuOTgwOCkiIGZpbGw9IiNGNUI2MTciLz4KPC9zdmc+Cg==" width="70" height="54" alt=""></span><span class="sl-shape" data-shape="stack-magenta" style="left:26px;top:67px;width:59px;height:39px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTkiIGhlaWdodD0iMzkiIHZpZXdCb3g9IjAgMCA1OSAzOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjUyMDggMTIuNzYzNkwwIDM5SDIzLjk2ODhMNTkgMjAuNTYzNkw0NS40NzkyIDBMMTMuNTIwOCAxMi43NjM2WiIgZmlsbD0iI0Q0MDBGRiIvPgo8L3N2Zz4K" width="59" height="39" alt=""></span><span class="sl-shape" data-shape="stack-orange" style="left:26px;top:18.000035375356674px;width:67px;height:67px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjciIGhlaWdodD0iNjciIHZpZXdCb3g9IjAgMCA2NyA2NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjc2MjQgMTEuMjUzOUw1Ny44MzQ0IDM0LjgxNzVMMjAuMTQwOSA1NC4zMDk4TDIxLjc2MjQgMTEuMjUzOVoiIGZpbGw9IiNGRjVFMDAiLz4KPC9zdmc+Cg==" width="67" height="67" alt=""></span><span class="sl-shape" data-shape="stack-green" style="left:7px;top:74px;width:39px;height:22px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzkiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAzOSAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNy4xNjA3TDM5IDkuMDU4ODJMMTIuODgzOSAyMkwwIDBaIiBmaWxsPSIjNTdENzAzIi8+Cjwvc3ZnPgo=" width="39" height="22" alt=""></span></div></section>
 
           <div class="bt-home-games" aria-label="Daily games">
             <article class="bt-home-game" aria-labelledby="bt-game-color-mix-jam">
@@ -2946,6 +2962,30 @@ html,body{margin:0!important;padding:0!important;background:#f7f8fa!important}
     if (event.key === key || event.key === null) apply(savedPreference());
   });
   apply(savedPreference());
+})();
+/* Calendar date follows the viewer's device; the existing Pacific game reset is separate. */
+(() => {
+  const root = document.getElementById('bite-playground');
+  if (!root) return;
+  let timer;
+  function update() {
+    clearTimeout(timer);
+    const now = new Date();
+    const date = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(now);
+    const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(now);
+    const isoDate = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
+    root.querySelectorAll('[data-bite-date]').forEach(time => {
+      time.querySelector('[data-bite-calendar-date]').textContent = date;
+      time.querySelector('[data-bite-weekday]').textContent = weekday;
+      time.dateTime = isoDate;
+      time.setAttribute('aria-label', `${weekday}, ${date}`);
+    });
+    timer = setTimeout(update, 60000 - Date.now() % 60000);
+  }
+  document.addEventListener('visibilitychange', () => document.hidden ? clearTimeout(timer) : update());
+  window.addEventListener('focus', update);
+  window.addEventListener('pageshow', update);
+  update();
 })();
 (() => {
   const root = document.getElementById('bite-gravity-study');

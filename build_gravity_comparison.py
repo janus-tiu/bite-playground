@@ -9,9 +9,13 @@ def build_gravity_comparison(root):
     original = (source / 'gravity-original-document.html').read_text()
     gradient_css = (source / 'gradient-toggle.css').read_text()
     gradient_js = (source / 'gradient-toggle.js').read_text()
-    preview_css = (source / 'gravity-preview.css').read_text() + gradient_css
-    preview_js = gradient_js + (source / 'gravity-preview.js').read_text()
+    date_html = (source / 'bite-home-date.html').read_text()
+    preview_css = (source / 'gravity-preview.css').read_text() + gradient_css + (source / 'bite-home-date.css').read_text()
+    preview_js = gradient_js + (source / 'bite-home-date.js').read_text() + (source / 'gravity-preview.js').read_text()
     for key, document, end in [('original', original, 1400), ('assemble', current, 1150)]:
+        banner_start = '<section class="sl-banner sl-banner--stack"'
+        assert document.count(banner_start) == 1
+        document = document.replace(banner_start, date_html + banner_start, 1)
         document = document.replace('</head>', '<style>' + preview_css + '</style></head>', 1)
         document = document.replace('</body>', '<script>' + preview_js.replace('__END_TIME__', str(end)) + '</script></body>', 1)
         (dist / ('gravity-' + key + '.html')).write_text(document)

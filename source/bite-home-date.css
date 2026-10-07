@@ -1,0 +1,15 @@
+/* Date and weekday from Figma 27:1789 / 27:1895; reserve the row before hydration. */
+#bite-playground .bt-home-date{display:flex;align-items:center;gap:4px;min-height:21px;margin:0;color:#b2b4bc;font:400 16px/21px 'Figtree',Arial,sans-serif;white-space:nowrap}
+#bite-playground .bt-home-date-separator{color:#c2c4ca;font:600 12px/15.6px 'Figtree',Arial,sans-serif}
+/* Stacked banner: date at y=152, banner at y=189, games at y=336. */
+#bite-playground .bt-phone .bt-incoming{padding:16px 24px 28px}
+#bite-playground .bt-incoming>.bt-home-date{margin-bottom:16px}
+#bite-playground .bt-incoming>.sl-banner{margin-left:1px}
+#bite-playground .bt-phone .bt-incoming .bt-home-games{margin-top:17px}
+#bite-playground .sl-study[data-variant="stack"] .bt-home-date{margin:16px 24px 0}
+#bite-playground .sl-study[data-variant="stack"] .sl-banner{margin-top:16px}
+#bite-playground .sl-study[data-variant="stack"] .bt-home-games{margin:17px 0 28px 24px}
+/* Orbit banner: date follows the banner, at y=309; games begin at y=349. */
+#bite-playground .sl-study[data-variant="orbit"] .sl-banner{margin-top:11px}
+#bite-playground .sl-study[data-variant="orbit"] .bt-home-date{margin:20px 25px 0}
+#bite-playground .sl-study[data-variant="orbit"] .bt-home-games{margin:19px 0 28px 25px}
