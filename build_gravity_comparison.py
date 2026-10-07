@@ -7,8 +7,10 @@ def build_gravity_comparison(root):
     dist = root / 'dist'
     current = (dist / 'index.html').read_text()
     original = (source / 'gravity-original-document.html').read_text()
-    preview_css = (source / 'gravity-preview.css').read_text()
-    preview_js = (source / 'gravity-preview.js').read_text()
+    gradient_css = (source / 'gradient-toggle.css').read_text()
+    gradient_js = (source / 'gradient-toggle.js').read_text()
+    preview_css = (source / 'gravity-preview.css').read_text() + gradient_css
+    preview_js = gradient_js + (source / 'gravity-preview.js').read_text()
     for key, document, end in [('original', original, 1400), ('assemble', current, 1150)]:
         document = document.replace('</head>', '<style>' + preview_css + '</style></head>', 1)
         document = document.replace('</body>', '<script>' + preview_js.replace('__END_TIME__', str(end)) + '</script></body>', 1)
@@ -20,9 +22,9 @@ def build_gravity_comparison(root):
     icon = uri(dist / 'assets/bite-playground-icon.png', 'image/png')
     font = uri(dist / 'assets/figtree-latin.woff2', 'font/woff2')
     css = "@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;src:url(" + font + ") format('woff2')}"
-    css += (source / 'playground.css').read_text() + (source / 'library.css').read_text() + (source / 'gravity-comparison.css').read_text()
+    css += (source / 'playground.css').read_text() + (source / 'library.css').read_text() + (source / 'gravity-comparison.css').read_text() + gradient_css
     before = (source / 'shell-before.html').read_text().replace('Version 01</span>', '2 versions</span>')
-    toolbar = '<div class="gc-toolbar"><p>Compare the original fall-and-reveal transition with the new direct-to-banner intro.</p><button type="button" class="gc-replay" disabled>Replay both</button></div>'
+    toolbar = '<div class="gc-toolbar"><p>Compare the original fall-and-reveal transition with the new direct-to-banner intro.</p><div class="pg-preview-options">' + (source / 'gradient-toggle.html').read_text() + '<button type="button" class="gc-replay" disabled>Replay both</button></div></div>'
     variants = []
     for key, label, title, description in [
         ('original', 'Original', 'Fall & reveal', 'Shapes fall, bounce, and clear before the banner assembles.'),
@@ -33,6 +35,6 @@ def build_gravity_comparison(root):
     reference = '<section class="gc-reference" aria-label="Developer reference"><h3>Developer reference</h3><a href="https://www.fancycomponents.dev/docs/components/physics/gravity" target="_blank" rel="noopener noreferrer">Gravity · Fancy Components</a><p><strong>Original:</strong> Matter.js gravity and collisions, a 1.4-second fall-and-reveal transition, then banner assembly.</p><p><strong>Direct to banner:</strong> Web Animations API, 1.15-second entry, 110 ms stagger, then gentle floating. Homepage content appears within 180 ms.</p></section>'
     body = before + toolbar + '<div class="gc-comparison">' + ''.join(variants) + '</div><div class="gc-support"><div id="gravity-comparison-notes">' + notes + '</div>' + reference + '</div>' + (source / 'shell-after.html').read_text()
     body = body.replace('__PLAYGROUND_ICON_DATA_URI__', icon)
-    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gravity transition · Bite Playground</title><meta name="description" content="Compare two Bite gravity transitions: the original fall and reveal, and direct assembly into the banner."><link rel="icon" type="image/png" href="' + icon + '"><style>' + css + '</style></head><body>' + body + '<script>' + (source / 'gravity-comparison.js').read_text() + '</script></body></html>'
+    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gravity transition · Bite Playground</title><meta name="description" content="Compare two Bite gravity transitions: the original fall and reveal, and direct assembly into the banner."><link rel="icon" type="image/png" href="' + icon + '"><style>' + css + '</style></head><body>' + body + '<script>' + gradient_js + (source / 'gravity-comparison.js').read_text() + '</script></body></html>'
     (dist / 'index.html').write_text('\n'.join(line.rstrip() for line in page.splitlines()) + '\n')
     print('Gravity comparison exported with independently controlled original and new previews.')

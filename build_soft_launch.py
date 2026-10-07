@@ -60,9 +60,10 @@ def build_soft_launch(root):
     shared_css = shared_css.replace('#bite-gravity-study', '.sl-study')
     font = uri(assets / 'figtree-latin.woff2', 'font/woff2')
     css = "@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;src:url(" + font + ") format('woff2')}"
-    css += (source / 'playground.css').read_text() + (source / 'library.css').read_text() + shared_css + (source / 'soft-launch.css').read_text()
-    body = before + '<div class="sl-comparison">' + ''.join(variants) + '</div><p class="sl-motion-note" hidden>Reduced motion is on. Both banners show their settled compositions.</p>' + (source / 'shell-after.html').read_text()
-    scripts = (source / 'stack-motion.js').read_text() + (source / 'soft-launch-time.js').read_text() + (source / 'soft-launch-motion.js').read_text()
+    css += (source / 'playground.css').read_text() + (source / 'library.css').read_text() + shared_css + (source / 'soft-launch.css').read_text() + (source / 'gradient-toggle.css').read_text()
+    toolbar = '<div class="pg-gradient-toolbar">' + (source / 'gradient-toggle.html').read_text() + '</div>'
+    body = before + toolbar + '<div class="sl-comparison">' + ''.join(variants) + '</div><p class="sl-motion-note" hidden>Reduced motion is on. Both banners show their settled compositions.</p>' + (source / 'shell-after.html').read_text()
+    scripts = (source / 'gradient-toggle.js').read_text() + (source / 'stack-motion.js').read_text() + (source / 'soft-launch-time.js').read_text() + (source / 'soft-launch-motion.js').read_text()
     page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soft launch banner animations · Bite Playground</title><meta name="description" content="Compare two Bite soft launch banner animations: assemble and bounce, and slow orbit."><link rel="icon" type="image/png" href="__PLAYGROUND_ICON_DATA_URI__"><style>' + css + '</style></head><body>' + body + '<script>' + scripts + '</script></body></html>'
     page = page.replace('__PLAYGROUND_ICON_DATA_URI__', uri(assets / 'bite-playground-icon.png', 'image/png'))
     for asset in json.loads((source / 'bite-home-assets.json').read_text()):

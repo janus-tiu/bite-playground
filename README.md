@@ -9,6 +9,8 @@ A library of Bite motion prototypes using EA Connect mobile screens.
 - **Gravity transition:** compare the original fall-and-reveal animation with the direct-to-banner intro. Each preview has its own controls; **Replay both** starts them together.
 - **Soft launch banner animations:** compare the stacked assemble-and-float banner with the slow orbit banner.
 
+Both pages have a **Blue gradient** switch for the Bite background. The choice is remembered on this device, applies to both previews, and does not restart their animations. Other app tabs retain their original backgrounds.
+
 The current copy, geometric assets, Figtree font, avatars, navigation, reduced-motion handling, and daily refresh-time logic are included.
 
 ## Run locally
@@ -50,7 +52,9 @@ The build uses only the Python standard library. No npm installation, ChatGPT en
 
 ## Hosting
 
-Serve `dist/` as the web root on a static host. The current links use root-relative paths, so mounting the site under a subdirectory requires updating those links. The existing live site remains hosted at the link above; uploading this repository does not configure automatic deployment or GitHub Pages.
+Serve `dist/` as the web root on a static host. The current links use root-relative paths, so mounting the site under a subdirectory requires updating those links. The existing ChatGPT-hosted site remains available at the link above.
+
+For Vercel, import this repository with the repository root as the Root Directory. The checked-in `vercel.json` selects the **Other** framework and serves `dist/`, skipping dependency installation and build commands because the built HTML is committed. Commit rebuilt `dist/` pages with source changes. A connected Vercel project can deploy new pushes automatically. GitHub Pages is not configured.
 
 ## Motion and dependencies
 

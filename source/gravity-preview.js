@@ -15,6 +15,9 @@
   }
   window.addEventListener('message', event => {
     if (event.source !== parent || event.origin !== location.origin) return;
+    if (event.data?.type === 'bite-preview-gradient' && typeof event.data.enabled === 'boolean') {
+      document.getElementById('bite-playground').dataset.biteGradient = event.data.enabled ? 'on' : 'off';
+    }
     if (event.data?.type === 'bite-gravity-replay') {
       const delay = Math.max(0, Math.min(1000, event.data.startAt - Date.now()));
       setTimeout(() => replay.click(), delay);
