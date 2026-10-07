@@ -1,0 +1,16 @@
+/* Selected soft-launch composition, Figma 21:1094. */
+#bite-gravity-study .bt-incoming{padding:24px 24px 28px 25px}
+#bite-gravity-study .bt-incoming .bt-home-games{width:345px;max-width:calc(100% + 1px);margin-top:16px}
+#bite-gravity-study .bt-incoming .bt-home-game{gap:16px}
+#bite-gravity-study .bt-incoming .bt-home-friends{flex-wrap:nowrap}
+#bite-gravity-study .sl-banner{position:relative;isolation:isolate;overflow:hidden;color:#fff;width:344px;max-width:100%;height:130px;background:#004ffe;border-radius:8px}
+#bite-gravity-study .sl-banner-copy{position:absolute;left:12px;top:14.5px;width:220px;z-index:2}
+#bite-gravity-study .bt-phone .sl-banner h3{margin:0;color:#fff;font:600 24px/28px 'Figtree',Arial,sans-serif;letter-spacing:.15px;white-space:nowrap}
+#bite-gravity-study .sl-banner p{margin:4px 0 0;color:#fff;font:400 16px/20.8px 'Figtree',Arial,sans-serif;white-space:nowrap}
+#bite-gravity-study .sl-stack-graphics{position:absolute;left:240px;top:12px;width:92.492px;height:106px}
+#bite-gravity-study .sl-shape{position:absolute;display:block;will-change:transform;transform-origin:center;pointer-events:none}
+#bite-gravity-study .sl-shape img{display:block;max-width:none}
+#bite-playground #bite-gravity-study .bt-controls .btn:disabled{opacity:.5;cursor:default}
+
+/* Let the incoming shapes travel through the viewport; restore banner clipping at rest. */
+#bite-gravity-study[data-banner-intro="true"] .sl-banner{overflow:visible}

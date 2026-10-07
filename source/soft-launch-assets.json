@@ -1,0 +1,110 @@
+[
+  {
+    "name": "stack-yellow",
+    "id": "21:1140",
+    "file": "soft-launch/stack-yellow.svg",
+    "width": 70.0,
+    "height": 54.0,
+    "x": 0,
+    "y": 7.44062945159385e-05
+  },
+  {
+    "name": "stack-magenta",
+    "id": "21:1141",
+    "file": "soft-launch/stack-magenta.svg",
+    "width": 59.0,
+    "height": 39.0,
+    "x": 26,
+    "y": 67
+  },
+  {
+    "name": "stack-orange",
+    "id": "21:1142",
+    "file": "soft-launch/stack-orange.svg",
+    "width": 67.0,
+    "height": 67.0,
+    "x": 26,
+    "y": 18.000035375356674
+  },
+  {
+    "name": "stack-green",
+    "id": "21:1143",
+    "file": "soft-launch/stack-green.svg",
+    "width": 39.0,
+    "height": 22.0,
+    "x": 7,
+    "y": 74
+  },
+  {
+    "name": "orbit-magenta",
+    "id": "21:1243",
+    "file": "soft-launch/orbit-magenta.svg",
+    "width": 26.0,
+    "height": 28.0,
+    "x": 54.00000762939453,
+    "y": 0
+  },
+  {
+    "name": "orbit-yellow",
+    "id": "21:1244",
+    "file": "soft-launch/orbit-yellow.svg",
+    "width": 43.0,
+    "height": 33.0,
+    "x": 0,
+    "y": 15.000111053339424
+  },
+  {
+    "name": "orbit-dark-green",
+    "id": "21:1245",
+    "file": "soft-launch/orbit-dark-green.svg",
+    "width": 33.0,
+    "height": 30.0,
+    "x": 112,
+    "y": 28.99991066644725
+  },
+  {
+    "name": "orbit-cyan",
+    "id": "21:1246",
+    "file": "soft-launch/orbit-cyan.svg",
+    "width": 34.0,
+    "height": 32.0,
+    "x": 104,
+    "y": 68
+  },
+  {
+    "name": "orbit-orange",
+    "id": "21:1247",
+    "file": "soft-launch/orbit-orange.svg",
+    "width": 59.0,
+    "height": 60.0,
+    "x": 8,
+    "y": 37.99999409002248
+  },
+  {
+    "name": "orbit-green",
+    "id": "21:1248",
+    "file": "soft-launch/orbit-green.svg",
+    "width": 39.0,
+    "height": 22.0,
+    "x": 59,
+    "y": 78
+  },
+  {
+    "name": "orbit-white",
+    "id": "21:1249",
+    "file": "soft-launch/orbit-white.svg",
+    "width": 36.0,
+    "height": 23.0,
+    "x": 86,
+    "y": 6
+  },
+  {
+    "name": "angled-background",
+    "id": "21:1238",
+    "file": "soft-launch/angled-background.svg",
+    "width": 393,
+    "height": 142,
+    "x": 0,
+    "y": 0
+  }
+]

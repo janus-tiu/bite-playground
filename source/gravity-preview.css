@@ -1,0 +1,16 @@
+/* Each comparison frame keeps its original app and animation controller isolated. */
+html,body{overflow:hidden!important}
+#bite-playground{min-height:0!important}
+#bite-playground>.pg-header,#bite-playground .pg-sidebar,#bite-playground .pg-heading{display:none!important}
+#bite-playground .pg-workspace{display:block!important;min-height:0!important}
+#bite-playground .pg-main{padding:0!important;max-width:none!important}
+#bite-playground #bite-gravity-study{display:flex!important;flex-direction:column;border:0;border-radius:0;width:100%}
+#bite-playground #bite-gravity-study .bt-controls{order:0;display:grid!important;grid-template-columns:1fr 1fr;gap:8px!important;padding:14px 16px!important;width:100%;min-height:158px}
+#bite-playground #bite-gravity-study .bt-controls>h2,#bite-playground .pg-control-note,#bite-playground .pg-gravity-notes,#bite-playground .pg-dev-reference{display:none!important}
+#bite-playground #bite-gravity-study .bt-controls .viz-row:first-of-type{grid-column:1/-1;display:grid!important;grid-template-columns:150px minmax(0,1fr);gap:10px;align-items:center}
+#bite-playground #bite-gravity-study .bt-controls .viz-row[aria-label]{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#bite-playground #bite-gravity-study #bt-status{font-size:11px;line-height:16px;margin:0}
+#bite-playground #bite-gravity-study #bt-banner-pause{grid-column:1/-1}
+#bite-playground #bite-gravity-study .bt-controls .btn{font-size:12px;line-height:18px;min-height:34px;padding:7px 8px}
+#bite-playground #bite-gravity-study .bt-preview{order:1;width:100%;min-height:0!important;padding:20px 12px!important}
+#bite-playground #bite-gravity-study .bt-phone{width:393px;max-width:none;flex-shrink:0;zoom:var(--gc-phone-scale,1)}

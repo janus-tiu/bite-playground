@@ -1,0 +1,5 @@
+#bite-playground .pg-prototype+.pg-prototype{margin-top:10px}
+#bite-playground .pg-prototype:not([aria-current="page"]){background:#fff;border-color:#e4e7ed}
+#bite-playground .pg-prototype:not([aria-current="page"]) strong{color:#344158}
+#bite-playground .pg-prototype:not([aria-current="page"]):hover{background:#f6f8fc;border-color:#c8d5ed}
+@media(max-width:640px){#bite-playground .pg-prototype strong{max-width:220px}#bite-playground .pg-prototype-meta{white-space:nowrap}}

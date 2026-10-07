@@ -1,0 +1,16 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="40.1221" cy="29.7143" rx="13.7143" ry="35.122" transform="rotate(90 40.1221 29.7143)" fill="#F5B617"/>
+<ellipse cx="40.1221" cy="50.2857" rx="13.7143" ry="35.122" transform="rotate(90 40.1221 50.2857)" fill="#F5B617"/>
+<mask id="mask0_11_1047" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="16" width="71" height="28">
+<ellipse cx="40.1221" cy="29.7143" rx="13.7143" ry="35.122" transform="rotate(90 40.1221 29.7143)" fill="white"/>
+</mask>
+<g mask="url(#mask0_11_1047)">
+<ellipse cx="40.1222" cy="50.2857" rx="13.7143" ry="35.122" transform="rotate(90 40.1222 50.2857)" fill="white"/>
+</g>
+<mask id="mask1_11_1047" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="16" width="71" height="28">
+<ellipse cx="40.1221" cy="29.7143" rx="13.7143" ry="35.122" transform="rotate(90 40.1221 29.7143)" fill="white"/>
+</mask>
+<g mask="url(#mask1_11_1047)">
+<ellipse cx="40.1222" cy="50.2857" rx="13.7143" ry="35.122" transform="rotate(90 40.1222 50.2857)" fill="#FF5E00"/>
+</g>
+</svg>

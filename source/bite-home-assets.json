@@ -1,0 +1,194 @@
+[
+  {
+    "name": "header-effect",
+    "id": "11:1009",
+    "format": "SVG",
+    "width": 393,
+    "height": 279,
+    "file": "bite-home/header-effect.svg",
+    "svg_root": {
+      "width": "393",
+      "height": "279",
+      "viewBox": "0 0 393 279"
+    }
+  },
+  {
+    "name": "color-mix-jam",
+    "id": "11:1047",
+    "format": "SVG",
+    "width": 80,
+    "height": 80,
+    "file": "bite-home/color-mix-jam.svg",
+    "svg_root": {
+      "width": "80",
+      "height": "80",
+      "viewBox": "0 0 80 80"
+    }
+  },
+  {
+    "name": "power-grid",
+    "id": "11:1062",
+    "format": "SVG",
+    "width": 80,
+    "height": 80,
+    "file": "bite-home/power-grid.svg",
+    "svg_root": {
+      "width": "80",
+      "height": "80",
+      "viewBox": "0 0 80 80"
+    }
+  },
+  {
+    "name": "maybe",
+    "id": "11:1077",
+    "format": "SVG",
+    "width": 80,
+    "height": 80,
+    "file": "bite-home/maybe.svg",
+    "svg_root": {
+      "width": "80",
+      "height": "80",
+      "viewBox": "0 0 80 80"
+    }
+  },
+  {
+    "name": "crossly",
+    "id": "11:1087",
+    "format": "SVG",
+    "width": 80,
+    "height": 80,
+    "file": "bite-home/crossly.svg",
+    "svg_root": {
+      "width": "80",
+      "height": "80",
+      "viewBox": "0 0 80 80"
+    }
+  },
+  {
+    "name": "nav-friends",
+    "id": "I11:1025;734:30858",
+    "format": "SVG",
+    "width": 24,
+    "height": 24,
+    "file": "bite-home/nav-friends.svg",
+    "svg_root": {
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24"
+    }
+  },
+  {
+    "name": "nav-inbox",
+    "id": "I11:1026;734:30878",
+    "format": "SVG",
+    "width": 24,
+    "height": 24,
+    "file": "bite-home/nav-inbox.svg",
+    "svg_root": {
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24"
+    }
+  },
+  {
+    "name": "nav-bite",
+    "id": "11:1029",
+    "format": "PNG",
+    "width": 24,
+    "height": 24,
+    "pixelScale": 3,
+    "file": "bite-home/nav-bite.png"
+  },
+  {
+    "name": "nav-find-friends",
+    "id": "I11:1034;734:30868",
+    "format": "SVG",
+    "width": 24,
+    "height": 24,
+    "file": "bite-home/nav-find-friends.svg",
+    "svg_root": {
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24"
+    }
+  },
+  {
+    "name": "nav-notifications",
+    "id": "I11:1035;734:30888",
+    "format": "SVG",
+    "width": 24,
+    "height": 24,
+    "file": "bite-home/nav-notifications.svg",
+    "svg_root": {
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24"
+    }
+  },
+  {
+    "name": "flame",
+    "id": "I11:1021;1458:32541",
+    "format": "SVG",
+    "width": 16.559844970703125,
+    "height": 22,
+    "file": "bite-home/flame.svg",
+    "svg_root": {
+      "width": "17",
+      "height": "22",
+      "viewBox": "0 0 17 22"
+    }
+  },
+  {
+    "name": "friend-one",
+    "id": "I11:1060;2742:16811",
+    "format": "PNG",
+    "width": 20.8427734375,
+    "height": 24,
+    "file": "bite-home/friend-one.png"
+  },
+  {
+    "name": "friend-two",
+    "id": "I11:1060;2742:16814",
+    "format": "PNG",
+    "width": 20.8427734375,
+    "height": 24,
+    "file": "bite-home/friend-two.png"
+  },
+  {
+    "name": "friend-three-cropped",
+    "id": "I11:1060;2742:16817",
+    "format": "PNG",
+    "width": 20.8427734375,
+    "height": 24,
+    "file": "bite-home/friend-three-cropped.png"
+  },
+  {
+    "name": "friend-three",
+    "id": "I11:1075;2742:16817",
+    "format": "PNG",
+    "width": 24,
+    "height": 24,
+    "file": "bite-home/friend-three.png"
+  },
+  {
+    "name": "friend-single",
+    "id": "I11:1096;2742:16811",
+    "format": "PNG",
+    "width": 26,
+    "height": 26,
+    "file": "bite-home/friend-single.png"
+  },
+  {
+    "name": "status-levels",
+    "id": "19:1264",
+    "format": "SVG",
+    "width": 143,
+    "height": 54,
+    "file": "bite-home/status-levels.svg",
+    "svg_root": {
+      "width": "139",
+      "height": "54",
+      "viewBox": "0 0 139 54"
+    }
+  }
+]

@@ -1,0 +1,37 @@
+#bite-playground .sl-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+#bite-playground .sl-variant{min-width:0;border:1px solid var(--pg-line);border-radius:16px;overflow:hidden;background:white}
+#bite-playground .sl-variant-heading{padding:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#bite-playground .sl-variant-heading h2{font:600 18px/24px 'Figtree',sans-serif;margin:0;color:var(--pg-ink)}
+#bite-playground .sl-variant-heading p{font:400 13px/20px 'Figtree',sans-serif;margin:4px 0 0;color:var(--pg-muted)}
+#bite-playground .sl-actions{display:flex;gap:8px}
+#bite-playground .sl-actions button{font:500 14px/20px 'Figtree',sans-serif;padding:8px 12px;border:1px solid #dce2ec;border-radius:8px;background:white;color:#344158;min-width:70px}
+#bite-playground .sl-actions button:hover{background:#f0f4ff}
+#bite-playground .sl-actions button:disabled{cursor:default;opacity:.55}
+#bite-playground .sl-device-view{display:flex;justify-content:center;min-width:0;padding:24px 16px;background-color:#f0f2f6;background-image:radial-gradient(#ccd2df 1px,transparent 1px);background-size:18px 18px}
+#bite-playground .sl-study .bt-phone{max-width:none;flex-shrink:0;zoom:var(--sl-scale,1)}
+#bite-playground .sl-study .sl-home{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
+#bite-playground .sl-study .sl-home::-webkit-scrollbar{display:none}
+#bite-playground .sl-study .bt-nav button{opacity:1;cursor:default}
+#bite-playground .sl-study .bt-tab-indicator{width:50px;left:171.5px}
+#bite-playground .sl-study .bt-home-games{width:345px;margin:16px 0 28px 25px}
+#bite-playground .sl-study[data-variant="orbit"] .bt-home-games{margin:26px 0 28px 24px}
+#bite-playground .sl-study .bt-home-game-info{flex:0 0 234px;min-width:0}
+#bite-playground .sl-study .bt-home-friends{flex-wrap:nowrap}
+#bite-playground .sl-study .bt-home-game{gap:16px}
+#bite-playground .sl-banner{position:relative;flex-shrink:0;isolation:isolate;color:white;overflow:hidden}
+#bite-playground .sl-banner--stack{width:344px;height:130px;margin:24px 0 0 25px;background:#004ffe;border-radius:8px}
+#bite-playground .sl-banner--orbit{width:393px;height:142px;margin-top:12px}
+#bite-playground .sl-banner-background{position:absolute;inset:0;display:block;width:393px;height:142px;max-width:none}
+#bite-playground .sl-banner-copy{position:absolute;left:12px;top:14.5px;width:220px;z-index:2}
+#bite-playground .sl-banner--orbit .sl-banner-copy{left:25px;top:21px;width:228px}
+#bite-playground .sl-banner h3{margin:0;color:white;font:600 24px/28px 'Figtree',Arial,sans-serif;letter-spacing:.15px;white-space:nowrap}
+#bite-playground .sl-banner p{margin:4px 0 0;color:white;font:400 16px/20.8px 'Figtree',Arial,sans-serif;white-space:nowrap}
+#bite-playground .sl-stack-graphics{position:absolute;left:240px;top:12px;width:92.492px;height:106px}
+#bite-playground .sl-orbit-graphics{position:absolute;inset:0;overflow:hidden;mask-image:url('__SOFT_LAUNCH_ANGLED_BACKGROUND__');mask-repeat:no-repeat;mask-size:393px 142px}
+#bite-playground .sl-orbit-motion{position:absolute;inset:0;transform:translateY(8px) scale(.8);transform-origin:351px 70px}
+#bite-playground .sl-shape{position:absolute;display:block;will-change:transform;transform-origin:center;pointer-events:none}
+#bite-playground .sl-shape img{display:block;max-width:none}
+#bite-playground .sl-motion-note{margin:16px 0 0;color:var(--pg-muted);font:400 14px/22px 'Figtree',sans-serif}
+#bite-playground .sl-motion-note[hidden]{display:none}
+@media(max-width:1000px){#bite-playground .sl-comparison{grid-template-columns:minmax(0,1fr)}#bite-playground .sl-variant{max-width:620px;width:100%;margin:auto}}
+@media(max-width:640px){#bite-playground .sl-variant-heading{padding:16px}#bite-playground .sl-device-view{padding:20px 12px}}
