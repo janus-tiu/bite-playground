@@ -13,6 +13,7 @@ def build_soft_launch(root):
         return 'data:' + mime + ';base64,' + base64.b64encode(path.read_bytes()).decode()
 
     manifest = json.loads((source / 'soft-launch-assets.json').read_text())
+    greeting_assets = json.loads((source / 'greeting-banner-assets.json').read_text())
     original = (source / 'gravity-transition.html').read_text()
     before = (source / 'shell-before.html').read_text()
     before = before.replace('href="#gravity-transition"', 'href="/index.html"')
@@ -45,15 +46,30 @@ def build_soft_launch(root):
         return ''.join(result)
 
     copy = '<div class="sl-banner-copy"><h3>Small games.<br>Shared moments.</h3><p>Quick games,<br>refreshed daily at <time data-reset-time>3:00 AM ET</time>.</p></div>'
+    greeting_shapes = ''.join(
+        f'<span class="sl-shape" data-shape="stack-{asset["name"].removeprefix("greeting-")}" '
+        f'style="left:{asset["x"]}px;top:{asset["y"]}px;width:{asset["width"]}px;height:{asset["height"]}px">'
+        f'<img src="__SOFT_LAUNCH_{asset["name"].upper().replace("-", "_")}__" '
+        f'width="{asset["width"]:g}" height="{asset["height"]:g}" alt=""></span>'
+        for asset in greeting_assets if asset['name'] != 'greeting-flame'
+    )
     date_html = (source / 'bite-home-date.html').read_text()
     variants = []
-    for key, title, subtitle in [('stack', 'Assemble and bounce', '1.2 s entry · Gentle floating loop'), ('orbit', 'Slow orbit', '20 s revolution · Continuous loop')]:
+    for key, title, subtitle in [('stack', 'Assemble and bounce', '1.2 s entry · Gentle floating loop'), ('orbit', 'Slow orbit', '20 s revolution · Continuous loop'), ('greeting', 'Blue greeting header', '1.2 s entry · Gentle floating loop')]:
         if key == 'stack':
             banner = date_html + (source / 'stack-banner.html').read_text()
-        else:
+        elif key == 'orbit':
             banner = '<section class="sl-banner sl-banner--orbit" aria-label="Bite soft launch"><img class="sl-banner-background" src="__SOFT_LAUNCH_ANGLED_BACKGROUND__" width="393" height="142" alt="">' + copy + '<div class="sl-orbit-graphics" aria-hidden="true"><div class="sl-orbit-motion">' + shapes(key) + '</div></div></section>' + date_html
+        else:
+            banner = '<section class="sl-banner sl-banner--greeting" aria-label="Bite greeting"><div class="sl-banner-copy"><h3 data-bite-greeting>Good morning!</h3><p>New games in <time data-reset-countdown>a few hours</time>.</p></div><div class="sl-greeting-graphics" aria-hidden="true">' + greeting_shapes + '</div></section>'
         games = games_source.replace('bt-game-', 'sl-' + key + '-game-')
-        phone = header.replace('id="bt-screen-title"', 'id="sl-' + key + '-title"') + '<div class="sl-home">' + banner + games + '</div>' + nav + '</div>'
+        variant_header = header.replace('id="bt-screen-title"', 'id="sl-' + key + '-title"')
+        content = banner + games
+        if key == 'greeting':
+            variant_header = variant_header.replace('Current streak: 0 days', 'Current streak: 4 days').replace('<span>0</span>', '<span>4</span>')
+            variant_header = variant_header.replace('src="__BITE_HOME_FLAME__" width="17" height="22"', 'src="__SOFT_LAUNCH_GREETING_FLAME__" width="17" height="23"')
+            content = banner + '<div class="sl-greeting-content">' + date_html + games + '</div>'
+        phone = variant_header + '<div class="sl-home">' + content + '</div>' + nav + '</div>'
         variants.append(f'<article class="sl-variant" data-motion-player="{key}" aria-labelledby="sl-{key}-heading"><header class="sl-variant-heading"><div><h2 id="sl-{key}-heading">{title}</h2><p>{subtitle}</p></div><div class="sl-actions"><button type="button" data-replay aria-label="Replay {title.lower()}">Replay</button><button type="button" data-pause aria-pressed="false" aria-label="Pause {title.lower()}">Pause</button></div></header><div class="sl-device-view"><div class="sl-study" data-variant="{key}">{phone}</div></div></article>')
 
     base_css = re.search(r'<style>(.*?)</style>', original, re.S).group(1)
@@ -63,15 +79,15 @@ def build_soft_launch(root):
     css = "@font-face{font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;src:url(" + font + ") format('woff2')}"
     css += (source / 'playground.css').read_text() + (source / 'library.css').read_text() + shared_css + (source / 'soft-launch.css').read_text() + (source / 'gradient-toggle.css').read_text() + (source / 'bite-home-date.css').read_text()
     toolbar = '<div class="pg-gradient-toolbar">' + (source / 'gradient-toggle.html').read_text() + '</div>'
-    body = before + toolbar + '<div class="sl-comparison">' + ''.join(variants) + '</div><p class="sl-motion-note" hidden>Reduced motion is on. Both banners show their settled compositions.</p>' + (source / 'shell-after.html').read_text()
-    scripts = (source / 'gradient-toggle.js').read_text() + (source / 'bite-home-date.js').read_text() + (source / 'stack-motion.js').read_text() + (source / 'soft-launch-time.js').read_text() + (source / 'soft-launch-motion.js').read_text()
-    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soft launch banner animations · Bite Playground</title><meta name="description" content="Compare two Bite soft launch banner animations: assemble and bounce, and slow orbit."><link rel="icon" type="image/png" href="__PLAYGROUND_ICON_DATA_URI__"><style>' + css + '</style></head><body>' + body + '<script>' + scripts + '</script></body></html>'
+    body = before + toolbar + '<div class="sl-comparison">' + ''.join(variants) + '</div><p class="sl-motion-note" hidden>Reduced motion is on. All banners show their settled compositions.</p>' + (source / 'shell-after.html').read_text()
+    scripts = (source / 'gradient-toggle.js').read_text() + (source / 'bite-home-date.js').read_text() + (source / 'stack-motion.js').read_text() + (source / 'soft-launch-time.js').read_text() + (source / 'greeting-banner-time.js').read_text() + (source / 'soft-launch-motion.js').read_text()
+    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soft launch banner animations · Bite Playground</title><meta name="description" content="Compare three Bite banner explorations: assemble and bounce, slow orbit, and a blue greeting header."><link rel="icon" type="image/png" href="__PLAYGROUND_ICON_DATA_URI__"><style>' + css + '</style></head><body>' + body + '<script>' + scripts + '</script></body></html>'
     page = page.replace('__PLAYGROUND_ICON_DATA_URI__', uri(assets / 'bite-playground-icon.png', 'image/png'))
     for asset in json.loads((source / 'bite-home-assets.json').read_text()):
         token = '__BITE_HOME_' + asset['name'].upper().replace('-', '_') + '__'
         mime = 'image/svg+xml' if asset['format'] == 'SVG' else 'image/png'
         page = page.replace(token, uri(assets / asset['file'], mime))
-    for asset in manifest:
+    for asset in manifest + greeting_assets:
         token = '__SOFT_LAUNCH_' + asset['name'].upper().replace('-', '_') + '__'
         assert token in page, 'Unused banner asset: ' + asset['name']
         page = page.replace(token, uri(assets / asset['file'], 'image/svg+xml'))

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "greeting-yellow",
+    "id": "33:2176",
+    "file": "soft-launch/greeting-yellow.svg",
+    "width": 49,
+    "height": 38,
+    "x": 0.0001220703125,
+    "y": -0.000002539131401135819
+  },
+  {
+    "name": "greeting-magenta",
+    "id": "33:2177",
+    "file": "soft-launch/greeting-magenta.svg",
+    "width": 42,
+    "height": 28,
+    "x": 18.1510009765625,
+    "y": 46.773681640625
+  },
+  {
+    "name": "greeting-orange",
+    "id": "33:2178",
+    "file": "soft-launch/greeting-orange.svg",
+    "width": 47,
+    "height": 47,
+    "x": 18.1510009765625,
+    "y": 12.566076680931019
+  },
+  {
+    "name": "greeting-green",
+    "id": "33:2179",
+    "file": "soft-launch/greeting-green.svg",
+    "width": 28,
+    "height": 16,
+    "x": 4.8868408203125,
+    "y": 51.660400390625
+  },
+  {
+    "name": "greeting-flame",
+    "id": "33:2102",
+    "file": "soft-launch/greeting-flame.svg",
+    "width": 17,
+    "height": 23,
+    "x": 4,
+    "y": 0.34
+  }
+]

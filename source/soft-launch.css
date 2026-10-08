@@ -31,7 +31,23 @@
 #bite-playground .sl-orbit-motion{position:absolute;inset:0;transform:translate(-36px,8px) scale(.8);transform-origin:351px 70px}
 #bite-playground .sl-shape{position:absolute;display:block;will-change:transform;transform-origin:center;pointer-events:none}
 #bite-playground .sl-shape img{display:block;max-width:none}
+/* Figma 33:2131: the greeting shares a solid blue surface with the header. */
+#bite-playground .sl-study[data-variant="greeting"] .bt-phone{background:#00071f}
+#bite-playground .sl-study[data-variant="greeting"] .bt-status{height:54px;background:#004ffe}
+#bite-playground .sl-study[data-variant="greeting"] .bt-device-time{left:15px;top:17px}
+#bite-playground .sl-study[data-variant="greeting"] .bt-status-levels{top:0}
+#bite-playground .sl-study[data-variant="greeting"] .bt-masthead{padding-left:16px;background:#004ffe}
+#bite-playground .sl-study[data-variant="greeting"] .bt-header-flame img{top:.34px}
+#bite-playground .sl-study[data-variant="greeting"] .sl-home{background:#004ffe}
+#bite-playground .sl-banner--greeting{width:393px;height:106px;background:#004ffe}
+#bite-playground .sl-banner--greeting .sl-banner-copy{left:16px;top:22.5px;width:279px}
+#bite-playground .sl-banner--greeting p{width:220px}
+#bite-playground .sl-greeting-graphics{position:absolute;left:303px;top:12px;width:64.57px;height:74px}
+#bite-playground .sl-greeting-content{position:relative;margin-top:-8px;min-height:calc(100% - 98px);padding:16px 24px 26px;border-radius:12px 12px 0 0;background:#00071f}
+#bite-playground .sl-study[data-variant="greeting"] .bt-home-date{margin:0 0 16px}
+#bite-playground .sl-study[data-variant="greeting"] .bt-home-games{margin:0;width:345px}
 #bite-playground .sl-motion-note{margin:16px 0 0;color:var(--pg-muted);font:400 14px/22px 'Figtree',sans-serif}
 #bite-playground .sl-motion-note[hidden]{display:none}
 @media(max-width:1000px){#bite-playground .sl-comparison{grid-template-columns:minmax(0,1fr)}#bite-playground .sl-variant{max-width:620px;width:100%;margin:auto}}
+@media(min-width:1540px){#bite-playground .sl-comparison{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){#bite-playground .sl-variant-heading{padding:16px}#bite-playground .sl-device-view{padding:20px 12px}}

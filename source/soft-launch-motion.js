@@ -47,6 +47,7 @@
   }
   const players = [...root.querySelectorAll('[data-motion-player]')].map(card => {
     const variant = card.dataset.motionPlayer;
+    const motionLabel = { stack: 'assemble and bounce', orbit: 'slow orbit', greeting: 'blue greeting header' }[variant];
     const pauseButton = card.querySelector('[data-pause]');
     const replayButton = card.querySelector('[data-replay]');
     let animations = [], userPaused = false, visible = true;
@@ -60,7 +61,7 @@
       });
       pauseButton.textContent = userPaused ? 'Resume' : 'Pause';
       pauseButton.setAttribute('aria-pressed', String(userPaused));
-      pauseButton.setAttribute('aria-label', `${userPaused ? 'Resume' : 'Pause'} ${variant === 'stack' ? 'assemble and bounce' : 'slow orbit'}`);
+      pauseButton.setAttribute('aria-label', `${userPaused ? 'Resume' : 'Pause'} ${motionLabel}`);
       card.dataset.playState = reduced.matches ? 'static' : paused ? 'paused' : 'playing';
     }
     function replay() {
@@ -68,7 +69,7 @@
       animations = []; userPaused = false;
       pauseButton.disabled = replayButton.disabled = reduced.matches;
       if (reduced.matches) { sync(); return; }
-      if (variant === 'stack') {
+      if (variant === 'stack' || variant === 'greeting') {
         animations.push(...window.BiteStackMotion.create(card));
       } else {
         card.querySelectorAll('[data-shape]').forEach(shape => {
